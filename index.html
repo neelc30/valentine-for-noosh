@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noosh 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd1dc, #ff9aaf);
+      font-family: 'Poppins', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 36px 28px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 140px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 14px 30px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #yes {
+      background: white;
+      color: #ff6f91;
+      font-weight: 600;
+    }
+
+    #yes:hover {
+      transform: scale(1.08);
+    }
+
+    #no {
+      background: rgba(255,255,255,0.85);
+      color: #ff6f91;
+      position: absolute;
+      left: 55%;
+      top: 10%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="card">
+    <h1>Noosh 💕</h1>
+    <p>Will you be my Valentine?</p>
+
+    <div class="buttons">
+      <button id="yes">Yes 💖</button>
+      <button id="no">No 🥺</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const card = document.getElementById("card");
+
+    function moveButton() {
+      const x = Math.random() * 65;
+      const y = Math.random() * 60;
+      noBtn.style.left = `${x}%`;
+      noBtn.style.top = `${y}%`;
+    }
+
+    // Desktop + mobile
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
+
+    yesBtn.addEventListener("click", () => {
+      card.innerHTML = `
+        <h1>YAY NOOSH 💘</h1>
+        <p>I’m so excited 🥰</p>
+        <p style="font-size:1.15rem;">
+          📅 February 14<br>
+          ✨ A cute surprise date<br>
+          💖 You & Me
+        </p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
